@@ -14,6 +14,7 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.todoapp.DescActivity;
 import com.example.todoapp.R;
 
 import com.example.todoapp.TaskActivity;
@@ -53,14 +54,14 @@ public class TaskAdapterr extends RecyclerView.Adapter<TaskAdapterr.TaskViewHold
 
         if(task.isChecked()){
             holder.task_title.setTextColor(activity.getColor(R.color.black));
-            holder.task_title.setBackground(activity.getDrawable(R.drawable.style_line));
+
         }
 
         holder.task_check.setOnCheckedChangeListener((buttonView, isChecked) -> {
             listRef.child("tasks").child(task.getId()).child("checked").setValue(isChecked);
             if(isChecked){
                 holder.task_title.setTextColor(activity.getColor(R.color.black));
-                holder.task_title.setBackground(activity.getDrawable(R.drawable.style_line));
+
             } else {
                 holder.task_title.setTextColor(activity.getColor(R.color.style_uncheck_box));
                 holder.task_title.setBackground(null);
@@ -68,7 +69,7 @@ public class TaskAdapterr extends RecyclerView.Adapter<TaskAdapterr.TaskViewHold
         });
 
         holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(activity, TaskActivity.class);
+            Intent intent = new Intent(activity, DescActivity.class);
             intent.putExtra("listId", data.getId());
             intent.putExtra("taskId", task.getId());
             activity.startActivity(intent);
