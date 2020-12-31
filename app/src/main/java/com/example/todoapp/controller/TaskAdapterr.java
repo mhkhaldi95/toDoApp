@@ -15,19 +15,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.todoapp.R;
+
 import com.example.todoapp.TaskActivity;
+
 import com.example.todoapp.models.ListToDo;
 import com.example.todoapp.models.TaskToDo;
 import com.google.firebase.database.DatabaseReference;
 
 
-public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
+public class TaskAdapterr extends RecyclerView.Adapter<TaskAdapterr.TaskViewHolder> {
 
     Activity activity;
     ListToDo data;
     DatabaseReference listRef;
 
-    public TaskAdapter(Activity activity, ListToDo data, DatabaseReference listRef) {
+    public TaskAdapterr(Activity activity, ListToDo data, DatabaseReference listRef) {
         this.activity = activity;
         this.data = data;
         this.listRef = listRef;
